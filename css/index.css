@@ -1,0 +1,344 @@
+* 
+{
+  
+    margin: 0px;
+    padding: 0px;
+    border: 0px ;
+}
+
+#loader
+{
+	height : 100vh;
+	width : 100vw;
+	background : rgb(20,20,20,0.9);
+	position : fixed;
+    z-index:5;
+	opacity : 1;
+	transition: opacity 1.5s;
+}
+#logoint
+{
+    width:20%;
+    margin-left : 50%;
+    transform : translateX(-50%);
+
+	
+}
+#logo1
+{
+	padding-left: 8vw;
+	margin-top : 150px;
+	
+	font-family : Georgia, Times,"Times New Roman", serif;
+		
+	transform : translate(0px , 0px);
+	transition : transform 1.2s;
+	transition-timing-function: linear;
+}
+
+#loader_txt
+{
+    
+    font-family: 'Advent Pro';
+    font-size: 2vw;
+    color: snow;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+
+#main
+{	
+	background : #1A1A1D;
+  
+    display: grid;
+    grid-template-areas: 
+        "nav nav"
+        "slide_show info1"
+        "info2 info2"
+        "ft ft" ;
+        
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto 8fr 9fr 1fr;
+	
+    grid-row-gap: 5px;
+    
+    z-index:-1;
+	
+	
+}
+
+@media all and (max-width: 800px)
+{
+    #main
+    {
+      
+        background: #1A1A1D;
+        display: grid;
+        grid-template-areas: 
+            "nav"
+            "slide_show"
+            "info1"
+            "info2"
+            "ft";
+        grid-template-columns: 1fr;
+        grid-template-rows:auto auto repeat(3,1fr);
+        grid-gap: 3px;
+        
+    }
+    #main > #nav_btn_contain
+    {
+        opacity: 1;
+        z-index: 4;
+
+    }
+    
+    #nav_btn
+    {
+        border-radius: 50%;
+    }
+   #main> #nav_bar > #links
+   {
+        display: block;
+        position: absolute;
+        width: 50%;;
+        right : -250px;
+        top: -430px;
+        padding-top: 15%;
+        border: 1px solid white;
+	transform: translate(0px, 0px);
+	transition:all 0.7s;
+	background:rgba(100,100,100,0.8);
+        
+    }
+   #main > #nav_bar > #links a
+    {
+        
+        background:rgba(100,100,100,0.6);
+        display : block;
+        color: rgba(0,220,220,1);
+        border: 0px;
+        padding: 10% 10%;
+       
+    }
+    
+    
+    #main > #nav_bar #links a:hover
+    {
+        background-color: #1D2731;
+        color: white;
+        transition:background 0.3s ,color 0.5s;
+        
+    }
+    
+    #slideshow > #slide
+    {
+        padding-top: 10px;
+    }
+}
+
+
+#nav_btn_contain
+{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+	z-index:-1;
+	opacity:1;
+    margin-top: 5%;
+	margin-right:5%;
+   
+}
+
+#nav_bar
+{
+
+    margin:0px 20%;
+    background-position: right;
+    grid-area: nav;
+	
+	background:rgba(0,0,0,0.5);
+  
+    
+	
+    
+}
+		
+#links
+{
+    opacity: 1;
+	z-index:3;
+	position:static;
+   
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+    
+}
+#nav_bar > #links  a
+{
+	
+	
+    font-size: 120%;
+    font-family : Georgia, Times,"Times New Roman", serif;
+    text-align: center;
+
+    padding: 40px 0px;
+	 
+	color : #4484CE;
+	text-decoration : none;
+    
+}
+
+#nav_bar >#links a:hover
+{       
+        
+        background-color: #1D2731;
+        color: white;
+        transition: color 0.4s , background 0.4s;
+
+}
+
+#main > #slideshow
+{
+    grid-area: slide_show;
+	display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
+    padding-left:3vw; 
+    
+}
+
+#main > #slideshow > #slide
+{   
+    grid-column: 1/13;
+    grid-row:  2/11;
+    grid-gap: 0px;
+    box-shadow: 10px 10px 10px -5px;
+    background-image: url("../images/slides/1.jpg");
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s;
+}
+
+
+#slideshow > #b1
+{
+    grid-column: 6/7;
+    grid-row:  11;
+    background: #1A1A1D;
+    border: 1px solid white;
+	border-radius:50%;
+    height: 14px;
+	width:14px;
+	opacity: 0.6;
+    margin-top : 20px;
+    transition: background 0.4s;
+    
+}
+
+#slideshow > #b2
+{
+	
+    grid-column: 7/8;
+    grid-row:  11;
+    background: #1A1A1D;
+    border: 1px solid white;
+	border-radius:50%;
+    height: 14px;
+	width: 14px;
+    opacity: 0.6;
+    transition: background 0.4s;
+    margin-top : 20px;
+    
+}
+
+#b1,#b2:focus
+{
+    outline: 0;
+}
+#slideshow > #b1:hover,#slideshow > #b2:hover
+{
+    background: white;
+}
+
+#main > #info1
+{
+    grid-area: info1;
+    
+}
+
+#main > #info1:hover
+{
+    
+ 
+    
+}
+#txt1
+{
+    padding: 10% 7% 7% 7%;
+    color:white;
+    
+    text-align: justify;
+    font-size: 2.5vw;
+    font-family: serif;
+    
+    line-height: 130%
+     
+}
+
+#info2
+{
+    grid-area: info2;
+    
+    box-shadow: 15px 15px 15px;
+    padding: 1%;
+    background:rgb(250,250,250,0.9);
+    margin:1% 1.5%;
+
+}
+
+#info2_div
+{
+    
+    text-align: justify;
+    font-size: 2.5vw;
+    font-family: serif;
+}
+
+#i_wrap
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(33%,1fr));
+}
+
+a.card,a.card:hover {
+  color: inherit;
+    text-decoration: none;
+}
+
+.rounded-circle
+{
+    padding: 15px 100px 0px 100px;
+    height:10%;
+}
+.card-text
+{
+    padding: 0px 0px 50px 0px;
+}
+
+
+
+#ft
+{
+    grid-area: ft;
+    text-align: center;
+    color: white;
+}
+
+#ft > p 
+{
+    padding: 10px 0px;
+}
+#ft > p > a
+{
+    text-decoration: none;
+}
